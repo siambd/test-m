@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstarp css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- font awsome icon link  -->
+    <script src="https://kit.fontawesome.com/81283b1540.js" crossorigin="anonymous"></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
+    <title>My Wallet</title>
+</head>
+
+<body class="">
+    <header class="my-4">
+        <h2 class="text-center">My Wallet <i class="fa-solid fa-wallet"></i>
+        </h2>
+    </header>
+    <!-- header part end  -->
+    <main>
+      <div class="container">
+        <div class="row my-5">
+          <!-------------------
+            image part start  
+          --------------------->
+            <section class="col-12 col-md-8 col-lg-6 d-flex justify-content-center">
+                <img class="img-fluid rounded-3" src="pic1.svg" alt="">
+            </section>
+            <!---------------- 
+              image part end  
+            ------------------->
+
+            <!--------------------------------
+               wallet part/ right side start
+              ------------------------------->
+            <section class="col-12 col-md-4  col-lg-6 calculation-part">
+              <!-- income part  -->
+                <div class="income-div">
+                    <h4 class="text-center my-3">Income </h4>
+                    <div class="mb-3 row d-flex justify-content-center">
+                      <label for="Income" class="col-sm-1 col-form-label">Income:</label>
+                      <div class="col-sm-4 mx-2">
+                        <input id="income-amount" type="text" class="form-control" >
+                        <p id="income-error" class="text-danger hidden-message"> <i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation"></i> Please input atleast 1</p>
+                        <p id="income-small-error" class="text-danger hidden-message"> <i class="fa-solid fa-exclamation"></i><i class="fa-solid fa-exclamation"></i> Your income is less than your expenses </p>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- Expenses part  -->
+                <div class=" expense-div">
+                    <h4 class="text-center"> Expenses</h4>
+                    <!-- food expenses  -->
+                  <div class="mb-3 row d-flex justify-content-center">
+                    <label for="food" class="col-sm-1 col-form-label">Food:</label>
+                    <div class="col-sm-4  mx-2">
+                      <input id="food-cost" type="text" class="form-control" >
+                      <p id="food-error" class="text-danger hidden-message">Please give correct input </p>
+                    </div>
+                  </div>
+                    <!-- rent expenses  -->
+                  <div class="mb-3 row d-flex justify-content-center">
+                    <label for="Rent" class="col-sm-1 col-form-label ">Rent:</label>
+                    <div class="col-sm-4  mx-2">
+                      <input id="rent-cost" type="text" class="form-control" >
+                      <p id="rent-error" class="text-danger hidden-message">Please give correct input </p>
+                    </div>
+                  </div>
+                  <!-- clothes expenses -->
+                  <div class="mb-3 row d-flex justify-content-center">
+                    <label for="Clothes" class="col-sm-1 col-form-label">Clothes:</label>
+                    <div class="col-sm-4  mx-2">
+                      <input id="clothes-cost" type="text" class="form-control" >
+                      <p id="clothes-error" class="text-danger hidden-message">Please give correct input </p>
+                    </div>
+                  </div>
+                </div>
+                 <!-- total-expense-calculation and balance check part  -->
+                <div class="total-expense-div my-4" >
+                  <div class="d-flex justify-content-center">
+                    <button id="calculate-button" class="btn btn-primary my-2 " type="button">Calculate</button>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <h4> Total Expenses: <span id="total-expenses">00</span></h4>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <h4> Balance: <span id="show-balance">00</span></h4>
+                  </div>
+                </div>
+                  <!-- saving amount and remaing balance part  -->
+                <div class="save-div my-4">
+                  <div class="mb-3 d-flex justify-content-center">
+                    <label for="Save" class="col-sm-1 col-form-label ">Save:</label>
+                    <div class="col-sm-2  mx-2">
+                      <input id="saving-input" type="text" class="form-control" >
+                    </div>
+                    <div class="mx-4">
+                      <h4> % </h4>
+                    </div>
+                    <div>
+                      <button id="save-button" class="btn btn-primary " type="button"> Save  </button>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center"> 
+                    <h4> Saving amount : <span id="show-saving">00</span></h4>
+                  </div>
+                  <div class="d-flex justify-content-center"> 
+                    <h4> Remaining balance  : <span id="show-remaing-balance">00</span></h4>
+                  </div>
+
+                </div>
+
+              </section>
+
+            <!-- -----------------------
+              wallet part/ right side end 
+            -------------------------- -->
+
+        </div>
+    </div>
+    </main>
+
+
+    <!-- bootstarp script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+        <!-- javascript link  -->
+        <script src="script/script.js"></script>
+</body>
+
+</html>
