@@ -79,12 +79,30 @@ document.getElementById('save-button').addEventListener('click', function () {
     const showSaving =document.getElementById('show-saving');
     const showBalance = document.getElementById('show-balance');
     const showRemainingBalance =document.getElementById('show-remaing-balance');
-
+// saving calculation 
     const calculateSavingAmount =parseFloat(incomeInput.value) * (parseFloat(savingInput.value) /100);
 
+    // saving error 
+    if (parseFloat(showBalance.innerText) < calculateSavingAmount)  {
+        showSaving.innerText ='';
+        showRemainingBalance.innerText ='';
+        document.getElementById('saving-insufficient-error').style.display ='block';
+        return;
+    }
+    else{
+        document.getElementById('saving-insufficient-error').style.display ='none';
+    }
+    if (isNaN(savingInput.value) || savingInput.value <= 0 || savingInput.value == '') {
+        document.getElementById('saving-input-error').style.display ='block'; 
+        showSaving.innerText = '';
+        showRemainingBalance.innerText = '' ;
+        return;
+    } else {
+        document.getElementById('saving-input-error').style.display ='none'; 
+    }
+
+    // saving amount and remaining diaplay
     showSaving.innerText= calculateSavingAmount.toFixed(2);
     showRemainingBalance.innerText= (parseFloat(showBalance.innerText) - parseFloat(calculateSavingAmount)).toFixed(2)
-    
-
 
 })
